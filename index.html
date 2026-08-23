@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TFTZ | Links</title>
+    <title>TFTZ | Official Website</title>
     <style>
         * {
             margin: 0;
@@ -17,174 +17,236 @@
             color: #ffffff;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 40px 15px;
         }
 
-        .wrapper {
+        .main-container {
             width: 100%;
-            max-width: 480px;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        /* ستايل الهيدر زي موقع أبو حمزة: صورة على اليمين وجنبها الاسم والبيو */
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: #141414;
-            border: 1px solid #222222;
-            border-radius: 18px;
-            padding: 18px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        /* الكارت الرئيسي (الهيدر) */
+        .profile-card {
+            background: #121212;
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
         }
 
         .avatar {
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            border: 2px solid #d4af37;
+            border: 3px solid #d4af37;
             object-fit: cover;
-            flex-shrink: 0;
+            margin-bottom: 12px;
             background: #000;
         }
 
-        .profile-info h1 {
-            font-size: 20px;
+        .profile-card h1 {
+            font-size: 24px;
             color: #d4af37;
             margin-bottom: 4px;
-            font-weight: 700;
         }
 
-        .profile-info p {
+        .profile-card p {
             font-size: 13px;
-            color: #9ca3af;
+            color: #aaaaaa;
         }
 
-        /* قائمة الأزرار شبه موقع أبو حمزة تماماً */
-        .links-list {
+        /* حالة البث المباشر */
+        .live-status-box {
+            background: #121212;
+            border: 1px solid #00995c;
+            border-radius: 16px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0, 153, 92, 0.15);
+        }
+
+        .live-info span {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #00cc7a;
+        }
+
+        .live-info small {
+            font-size: 12px;
+            color: #888888;
+        }
+
+        .btn-live-now {
+            background: #00995c;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-live-now:hover {
+            background: #00cc7a;
+        }
+
+        /* أقسام الأزرار والروابط */
+        .section-title {
+            color: #d4af37;
+            font-size: 16px;
+            margin: 10px 0 5px 5px;
+            border-right: 3px solid #d4af37;
+            padding-right: 8px;
+        }
+
+        .links-grid {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .link-card {
+        .link-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #141414;
-            color: #ffffff;
+            background: #151515;
+            color: #fff;
             text-decoration: none;
-            padding: 16px 20px;
+            padding: 14px 18px;
             border-radius: 14px;
-            border: 1px solid #222222;
+            border: 1px solid #222;
             transition: all 0.2s ease;
         }
 
-        .link-card:hover {
+        .link-item:hover {
             background: #1f1f1f;
             border-color: #d4af37;
-            transform: translateY(-2px);
+            transform: translateX(-4px);
         }
 
-        .link-right {
+        .link-left {
             display: flex;
             align-items: center;
             gap: 12px;
-        }
-
-        .link-icon {
-            font-size: 20px;
-        }
-
-        .link-title {
-            font-size: 15px;
             font-weight: 600;
-            color: #ffffff;
+            font-size: 15px;
         }
 
         .link-desc {
-            font-size: 13px;
-            color: #71717a;
+            font-size: 12px;
+            color: #777;
         }
 
-        /* زر مميز للبث */
-        .link-card.live {
-            border-color: #00995c;
-            background: rgba(0, 153, 92, 0.05);
+        /* شبكة أحدث الفيديوهات بالصور */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
-        .link-card.live:hover {
-            background: rgba(0, 153, 92, 0.15);
-            border-color: #00cc7a;
+
+        .video-card {
+            background: #151515;
+            border: 1px solid #222;
+            border-radius: 14px;
+            overflow: hidden;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.2s;
+        }
+
+        .video-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-3px);
+        }
+
+        .video-thumb {
+            width: 100%;
+            height: 100px;
+            background: #222;
+            object-fit: cover;
+        }
+
+        .video-title {
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .footer {
             text-align: center;
-            margin-top: 25px;
-            font-size: 11px;
-            color: #52525b;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <!-- الهيدر (صورة واسم جمب بعض زي أبو حمزة) -->
-        <div class="profile-header">
+    <div class="main-container">
+
+        <div class="profile-card">
             <img src="myphoto.png" alt="TFTZ" class="avatar">
-            <div class="profile-info">
-                <h1>TFTZ</h1>
-                <p>صانع محتوى وجيمر | PUBG Mobile & GTA V</p>
-            </div>
+            <h1>TFTZ</h1>
+            <p>صانع محتوى وجيمر | PUBG Mobile & GTA V</p>
         </div>
 
-        <!-- الأزرار -->
-        <div class="links-list">
-            <a href="https://kick.com/tftz" class="link-card live" target="_blank">
-                <div class="link-right">
-                    <span class="link-icon">🔴</span>
-                    <span class="link-title">Kick Live</span>
-                </div>
-                <span class="link-desc">تابع البث المباشر</span>
-            </a>
+        <div class="live-status-box">
+            <div class="live-info">
+                <span>🔴 البث المباشر حالياً</span>
+                <small>اضغط للمتابعة على Kick</small>
+            </div>
+            <a href="https://kick.com/tftz" class="btn-live-now" target="_blank">شاهد البث</a>
+        </div>
 
-            <a href="https://www.youtube.com/@TFTZMo3az" class="link-card" target="_blank">
-                <div class="link-right">
-                    <span class="link-icon">▶</span>
-                    <span class="link-title">YouTube</span>
+        <div class="section-title">تواصل معايا 🌐</div>
+        <div class="links-grid">
+            <a href="https://www.youtube.com/@TFTZMo3az" class="link-item" target="_blank">
+                <div class="link-left">
+                    <span>▶</span> يوتيوب (YouTube)
                 </div>
-                <span class="link-desc">قناة اليوتيوب</span>
+                <span class="link-desc">اشترك في القناة</span>
             </a>
-
-            <a href="https://www.tiktok.com/@tftzmoaz" class="link-card" target="_blank">
-                <div class="link-right">
-                    <span class="link-icon">🎵</span>
-                    <span class="link-title">TikTok</span>
+            <a href="https://www.tiktok.com/@tftzmoaz" class="link-item" target="_blank">
+                <div class="link-left">
+                    <span>🎵</span> تيك توك (TikTok)
                 </div>
-                <span class="link-desc">حساب التيك توك</span>
+                <span class="link-desc">أقوى المقاطع</span>
             </a>
-
-            <a href="https://www.instagram.com/tftzmoaaz/" class="link-card" target="_blank">
-                <div class="link-right">
-                    <span class="link-icon">📸</span>
-                    <span class="link-title">Instagram</span>
+            <a href="https://www.instagram.com/tftzmoaaz/" class="link-item" target="_blank">
+                <div class="link-left">
+                    <span>📸</span> انستجرام (Instagram)
                 </div>
-                <span class="link-desc">انستجرام</span>
+                <span class="link-desc">تابع يومياتي</span>
             </a>
+        </div>
 
-            <a href="https://youtube.com/shorts/4wrOf9AtXrM?si=CvDvROutuWDH2m0_" class="link-card" target="_blank">
-                <div class="link-right">
-                    <span class="link-icon">🔥</span>
-                    <span class="link-title">Latest Video</span>
-                </div>
-                <span class="link-desc">أحدث فيديو</span>
+        <div class="section-title">أحدث الفيديوهات 🎬</div>
+        <div class="videos-grid">
+            <a href="https://youtube.com/shorts/4wrOf9AtXrM?si=CvDvROutuWDH2m0_" class="video-card" target="_blank">
+                <img src="myphoto.png" alt="Video" class="video-thumb">
+                <div class="video-title">أقوى لقطات ببجي موبايل 🔥</div>
+            </a>
+            <a href="https://www.youtube.com/@TFTZMo3az" class="video-card" target="_blank">
+                <img src="myphoto.png" alt="Video" class="video-thumb">
+                <div class="video-title">تحدي جديد في GTA V 🎮</div>
             </a>
         </div>
 
         <div class="footer">
-            TFTZ Official © 2026
+            TFTZ Official Website © 2026
         </div>
+
     </div>
 
 </body>
