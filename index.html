@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFTZ | الصفحة الشخصية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-card {
+            background: #141414;
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid #d4af37;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            background-color: #222;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #d4af37;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        p.bio {
+            color: #b3b3b3;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .content-section {
+            margin-top: 25px;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+
+        .content-section h3 {
+            color: #d4af37;
+            font-size: 15px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-link {
+            display: block;
+            background: #1f1f1f;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid #333333;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-link:hover {
+            background: #d4af37;
+            color: #0d0d0d;
+            border-color: #d4af37;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-live {
+            background: #00b06f !important;
+            border-color: #00b06f !important;
+            color: #fff !important;
+        }
+
+        .btn-live:hover {
+            background: #00e691 !important;
+            color: #0d0d0d !important;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #666666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-card">
+            <!-- الصورة الشخصية -->
+            <img src="myphoto.png" alt="TFTZ Logo" class="avatar">
+            
+            <h1>TFTZ</h1>
+            <p class="bio">صانع محتوى وجيمر | PUBG Mobile & GTA V</p>
+            
+            <!-- أزرار المنصات الأساسية -->
+            <div class="links-list">
+                <a href="https://www.youtube.com/@TFTZMo3az" class="btn-link" target="_blank">قناة اليوتيوب (YouTube)</a>
+                <a href="https://kick.com/tftz" class="btn-link btn-live" target="_blank">🔴 تابع بثوث كيك الحية (Kick Live)</a>
+                <a href="https://www.instagram.com/tftzmoaaz/" class="btn-link" target="_blank">انستجرام (Instagram)</a>
+                <a href="https://www.tiktok.com/@tftzmoaz" class="btn-link" target="_blank">تيك توك (TikTok)</a>
+            </div>
+
+            <!-- قسم أحدث فيديو يوتيوب -->
+            <div class="content-section">
+                <h3>أحدث محتوى يوتيوب 🎬</h3>
+                <div class="links-list">
+                    <a href="https://youtube.com/shorts/4wrOf9AtXrM?si=CvDvROutuWDH2m0_" class="btn-link" target="_blank">شاهد آخر فيديو يوتيوب ↗</a>
+                </div>
+            </div>
+
+            <!-- قسم تيك توك -->
+            <div class="content-section">
+                <h3>أحدث فيديو تيك توك 🎥</h3>
+                <div class="links-list">
+                    <a href="https://www.tiktok.com/@tftzmoaz" class="btn-link" target="_blank">شاهد آخر فيديو على تيك توك ↗</a>
+                </div>
+            </div>
+
+            <!-- قسم انستجرام -->
+            <div class="content-section">
+                <h3>آخر منشور على انستجرام 📸</h3>
+                <div class="links-list">
+                    <a href="https://www.instagram.com/tftzmoaaz/" class="btn-link" target="_blank">شاهد آخر صورة على انستجرام ↗</a>
+                </div>
+            </div>
+            
+            <footer>
+                جميع الحقوق محفوظة © 2026 TFTZ
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
