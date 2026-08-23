@@ -29,7 +29,7 @@
             gap: 16px;
         }
 
-        /* الهيدر المتطابق مع أبو حمزة */
+        /* الهيدر */
         .brand-header {
             background: #111816;
             border: 1px solid #1f2d29;
@@ -37,7 +37,6 @@
             padding: 24px 20px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
         }
 
         .brand-avatar {
@@ -62,7 +61,7 @@
             color: #9ca3af;
         }
 
-        /* بوكس حالة البث (Live Status) */
+        /* حالة البث */
         .live-box {
             background: #111816;
             border: 1px solid #00995c;
@@ -100,7 +99,7 @@
             background: #00cc7a;
         }
 
-        /* شبكة الروابط والأزرار */
+        /* شبكة الروابط */
         .links-stack {
             display: flex;
             flex-direction: column;
@@ -139,7 +138,7 @@
             color: #6b7280;
         }
 
-        /* قسم الفيديوهات تماماً مثل موقع أبو حمزة */
+        /* قسم انستاباي */
         .section-label {
             color: #d4af37;
             font-size: 14px;
@@ -149,6 +148,49 @@
             border-right: 3px solid #d4af37;
         }
 
+        .instapay-box {
+            background: #111816;
+            border: 1px solid #d4af37;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .instapay-box h3 {
+            color: #d4af37;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .instapay-qr {
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+            object-fit: cover;
+            margin-bottom: 12px;
+            background: #fff;
+        }
+
+        .instapay-link {
+            display: block;
+            background: #1a2622;
+            color: #d4af37;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px dashed #d4af37;
+            word-break: break-all;
+        }
+
+        .instapay-link:hover {
+            background: #23332e;
+        }
+
+        /* الفيديوهات */
         .videos-wrapper {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -232,6 +274,15 @@
                     <span>📸</span> انستجرام (Instagram)
                 </div>
                 <span class="link-note">اليوميات</span>
+            </a>
+        </div>
+
+        <div class="section-label">دعم قناة TFTZ 💸</div>
+        <div class="instapay-box">
+            <h3>ادعمنا عبر إنستاباي (InstaPay)</h3>
+            <img src="instapay.png" alt="InstaPay QR" class="instapay-qr">
+            <a href="https://ipn.eg/S/motftz/instapay/0U7TI8" class="instapay-link" target="_blank">
+                💳 اضغط هنا للتحويل المباشر عبر انستاباي
             </a>
         </div>
 
