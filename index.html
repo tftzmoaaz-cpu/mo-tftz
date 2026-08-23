@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TFTZ | Official Website</title>
+    <title>TFTZ | Official Link-in-Bio</title>
     <style>
         * {
             margin: 0;
@@ -13,77 +13,91 @@
         }
 
         body {
-            background-color: #0b0b0b;
+            background-color: #070707;
             color: #ffffff;
             display: flex;
             justify-content: center;
             padding: 40px 15px;
+            min-height: 100vh;
         }
 
-        .main-container {
+        .page-wrapper {
             width: 100%;
-            max-width: 600px;
+            max-width: 480px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
         }
 
-        /* الكارت الرئيسي (الهيدر) */
-        .profile-card {
-            background: #121212;
+        /* الهيدر الفخم المماثل لموقع أبو حمزة */
+        .profile-box {
+            background: linear-gradient(145deg, #121212, #181818);
             border: 2px solid #d4af37;
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 24px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .avatar {
-            width: 90px;
-            height: 90px;
+        .avatar-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px auto;
             border-radius: 50%;
             border: 3px solid #d4af37;
-            object-fit: cover;
-            margin-bottom: 12px;
+            padding: 3px;
             background: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
-        .profile-card h1 {
-            font-size: 24px;
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-box h1 {
+            font-size: 26px;
             color: #d4af37;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
-        .profile-card p {
+        .profile-box p {
             font-size: 13px;
-            color: #aaaaaa;
+            color: #b3b3b3;
+            font-weight: 500;
         }
 
-        /* حالة البث المباشر */
-        .live-status-box {
-            background: #121212;
+        /* بوكس حالة البث الحية */
+        .live-banner {
+            background: #111b15;
             border: 1px solid #00995c;
             border-radius: 16px;
             padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 0 15px rgba(0, 153, 92, 0.15);
+            box-shadow: 0 0 20px rgba(0, 153, 92, 0.15);
         }
 
-        .live-info span {
+        .live-text span {
             display: block;
             font-size: 14px;
             font-weight: bold;
             color: #00cc7a;
         }
 
-        .live-info small {
+        .live-text small {
             font-size: 12px;
-            color: #888888;
+            color: #888;
         }
 
-        .btn-live-now {
+        .live-btn {
             background: #00995c;
             color: #fff;
             text-decoration: none;
@@ -91,159 +105,173 @@
             border-radius: 10px;
             font-size: 13px;
             font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .btn-live-now:hover {
-            background: #00cc7a;
-        }
-
-        /* أقسام الأزرار والروابط */
-        .section-title {
-            color: #d4af37;
-            font-size: 16px;
-            margin: 10px 0 5px 5px;
-            border-right: 3px solid #d4af37;
-            padding-right: 8px;
-        }
-
-        .links-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .link-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #151515;
-            color: #fff;
-            text-decoration: none;
-            padding: 14px 18px;
-            border-radius: 14px;
-            border: 1px solid #222;
             transition: all 0.2s ease;
         }
 
-        .link-item:hover {
-            background: #1f1f1f;
-            border-color: #d4af37;
-            transform: translateX(-4px);
+        .live-btn:hover {
+            background: #00cc7a;
+            transform: scale(1.05);
         }
 
-        .link-left {
+        /* عناوين الأقسام */
+        .section-heading {
+            color: #d4af37;
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            padding-right: 8px;
+            border-right: 3px solid #d4af37;
+            font-weight: 700;
+        }
+
+        /* قائمة الروابط الاحترافية */
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #141414;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 16px;
+            border: 1px solid #222222;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .social-btn:hover {
+            background: #1f1f1f;
+            border-color: #d4af37;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-left {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-weight: 600;
             font-size: 15px;
+            font-weight: 600;
         }
 
-        .link-desc {
+        .btn-desc {
             font-size: 12px;
-            color: #777;
+            color: #71717a;
         }
 
-        /* شبكة أحدث الفيديوهات بالصور */
-        .videos-grid {
+        /* قسم الفيديوهات المصغرة */
+        .media-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
         }
 
-        .video-card {
-            background: #151515;
-            border: 1px solid #222;
-            border-radius: 14px;
+        .media-card {
+            background: #141414;
+            border: 1px solid #222222;
+            border-radius: 16px;
             overflow: hidden;
             text-decoration: none;
             color: #fff;
-            transition: 0.2s;
+            transition: all 0.3s ease;
         }
 
-        .video-card:hover {
+        .media-card:hover {
             border-color: #d4af37;
             transform: translateY(-3px);
         }
 
-        .video-thumb {
+        .media-thumb {
             width: 100%;
-            height: 100px;
-            background: #222;
+            height: 110px;
             object-fit: cover;
+            background: #000;
         }
 
-        .video-title {
-            padding: 10px;
-            font-size: 13px;
+        .media-title {
+            padding: 10px 12px;
+            font-size: 12px;
             font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            color: #e4e4e7;
         }
 
-        .footer {
+        .footer-credits {
             text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #555;
+            margin-top: 15px;
+            font-size: 11px;
+            color: #52525b;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
+    <div class="page-wrapper">
 
-        <div class="profile-card">
-            <img src="myphoto.png" alt="TFTZ" class="avatar">
+        <!-- الهيدر الشخصي الفخم -->
+        <div class="profile-box">
+            <div class="avatar-container">
+                <img src="myphoto.png" alt="TFTZ">
+            </div>
             <h1>TFTZ</h1>
             <p>صانع محتوى وجيمر | PUBG Mobile & GTA V</p>
         </div>
 
-        <div class="live-status-box">
-            <div class="live-info">
-                <span>🔴 البث المباشر حالياً</span>
-                <small>اضغط للمتابعة على Kick</small>
+        <!-- حالة البث الحية -->
+        <div class="live-banner">
+            <div class="live-text">
+                <span>🔴 البث المباشر يعمل الآن</span>
+                <small>انضم وشاهد الحماس على Kick</small>
             </div>
-            <a href="https://kick.com/tftz" class="btn-live-now" target="_blank">شاهد البث</a>
+            <a href="https://kick.com/tftz" class="live-btn" target="_blank">شاهد البث</a>
         </div>
 
-        <div class="section-title">تواصل معايا 🌐</div>
-        <div class="links-grid">
-            <a href="https://www.youtube.com/@TFTZMo3az" class="link-item" target="_blank">
-                <div class="link-left">
+        <!-- شبكة وسائل التواصل -->
+        <div class="section-heading">منصات التواصل 🌐</div>
+        <div class="links-group">
+            <a href="https://www.youtube.com/@TFTZMo3az" class="social-btn" target="_blank">
+                <div class="btn-left">
                     <span>▶</span> يوتيوب (YouTube)
                 </div>
-                <span class="link-desc">اشترك في القناة</span>
+                <span class="btn-desc">اشترك الآن</span>
             </a>
-            <a href="https://www.tiktok.com/@tftzmoaz" class="link-item" target="_blank">
-                <div class="link-left">
+            <a href="https://www.tiktok.com/@tftzmoaz" class="social-btn" target="_blank">
+                <div class="btn-left">
                     <span>🎵</span> تيك توك (TikTok)
                 </div>
-                <span class="link-desc">أقوى المقاطع</span>
+                <span class="btn-desc">أقوى المقاطع</span>
             </a>
-            <a href="https://www.instagram.com/tftzmoaaz/" class="link-item" target="_blank">
-                <div class="link-left">
+            <a href="https://www.instagram.com/tftzmoaaz/" class="social-btn" target="_blank">
+                <div class="btn-left">
                     <span>📸</span> انستجرام (Instagram)
                 </div>
-                <span class="link-desc">تابع يومياتي</span>
+                <span class="btn-desc">يومياتي</span>
             </a>
         </div>
 
-        <div class="section-title">أحدث الفيديوهات 🎬</div>
-        <div class="videos-grid">
-            <a href="https://youtube.com/shorts/4wrOf9AtXrM?si=CvDvROutuWDH2m0_" class="video-card" target="_blank">
-                <img src="myphoto.png" alt="Video" class="video-thumb">
-                <div class="video-title">أقوى لقطات ببجي موبايل 🔥</div>
+        <!-- قسم أحدث الفيديوهات -->
+        <div class="section-heading">أحدث الإصدارات 🎬</div>
+        <div class="media-grid">
+            <a href="https://youtube.com/shorts/4wrOf9AtXrM?si=CvDvROutuWDH2m0_" class="media-card" target="_blank">
+                <img src="myphoto.png" alt="Video" class="media-thumb">
+                <div class="media-title">أقوى لقطات ببجي موبايل 🔥</div>
             </a>
-            <a href="https://www.youtube.com/@TFTZMo3az" class="video-card" target="_blank">
-                <img src="myphoto.png" alt="Video" class="video-thumb">
-                <div class="video-title">تحدي جديد في GTA V 🎮</div>
+            <a href="https://www.youtube.com/@TFTZMo3az" class="media-card" target="_blank">
+                <img src="myphoto.png" alt="Video" class="media-thumb">
+                <div class="media-title">تحدي جديد في GTA V 🎮</div>
             </a>
         </div>
 
-        <div class="footer">
+        <div class="footer-credits">
             TFTZ Official Website © 2026
         </div>
 
